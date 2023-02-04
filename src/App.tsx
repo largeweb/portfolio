@@ -1,38 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { Link } from 'react-router-dom'
-import './App.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [activeButton, setActiveButton] = useState('businesses');
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Link to="/businesses"><button>My Businesses</button></Link>
-      <Link to="/projects"><button>My Projects</button></Link>
-      <Link to="/connect"><button>Connect</button></Link>
+      <header className="App-header">
+        <h1>Web3, Blockchain & The Metaverse</h1>
+        <nav>
+          <button
+            className={`nav-button ${activeButton === 'businesses' ? 'active' : ''}`}
+            onClick={() => setActiveButton('businesses')}
+          >
+            <Link to="/businesses">My Businesses</Link>
+          </button>
+          <button
+            className={`nav-button ${activeButton === 'projects' ? 'active' : ''}`}
+            onClick={() => setActiveButton('projects')}
+          >
+            <Link to="/projects">My Projects</Link>
+          </button>
+          <button
+            className={`nav-button ${activeButton === 'connect' ? 'active' : ''}`}
+            onClick={() => setActiveButton('connect')}
+          >
+            <Link to="/connect">Connect</Link>
+          </button>
+        </nav>
+      </header>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
