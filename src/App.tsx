@@ -13,24 +13,11 @@ const App: React.FC = () => {
         </Helmet>
         <h1>Web3, Blockchain & The Metaverse</h1>
         <nav>
-          <button
-            className={`nav-button`}
-            // onClick={() => setActiveButton('businesses')}
-          >
-            <Link to="/businesses">My Businesses</Link>
-          </button>
-          <button
-            className={`nav-button`}
-            // onClick={() => setActiveButton('projects')}
-          >
-            <Link to="/projects">My Projects</Link>
-          </button>
-          <button
-            className={`nav-button`}
-            // onClick={() => setActiveButton('connect')}
-          >
-            <Link to="/connect">Connect</Link>
-          </button>
+          <Link to="/businesses"><button className='nav-button'>My Businesses</button></Link>
+          <Link to="/projects"><button className='nav-button'>My Projects</button></Link>
+        </nav>
+        <nav>
+          <Link to="/connect"><button className='nav-button'>Connect</button></Link>
         </nav>
       </header>
     </div>
