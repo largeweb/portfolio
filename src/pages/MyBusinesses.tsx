@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 function MyBusinesses() {
   return (
     <div className="businesses-container">
-        <Navbar />
+        <Navbar active={'b'}/>
       <div className="business">
         <img src="https://via.placeholder.com/300x200" alt="Business 1"/>
         <h2>Business 1</h2>

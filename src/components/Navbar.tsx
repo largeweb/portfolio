@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({active}) => {
+
     return (
         <div style={{
             display: 'flex',
@@ -18,18 +19,10 @@ const Navbar = () => {
             margin: '0 auto',
             marginBottom: '20px'
         }}>
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-                <p style={{ fontSize: '1rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 0.5s ease-in-out' }}>Home</p>
-            </Link>
-            <Link to="/projects" style={{ textDecoration: 'none', color: 'white' }}>
-                <p style={{ fontSize: '1rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 0.9s ease-in-out' }}>Projects</p>
-            </Link>
-            <Link to="/businesses" style={{ textDecoration: 'none', color: 'white' }}>
-                <p style={{ fontSize: '1rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.3s ease-in-out' }}>Businesses</p>
-            </Link>
-            <Link to="/connect" style={{ textDecoration: 'none', color: 'white' }}>
-                <p style={{ fontSize: '1rem', color:"gray", padding:"20px", animation: 'navbarButtonFadeIn 1.7s ease-in-out' }}>Connect</p>
-            </Link>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 0.5s ease-in-out' }}>Home</p> </Link>
+            {active!='p' && <Link to="/projects" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 0.9s ease-in-out' }}>Projects</p> </Link>}
+            {active!='b' && <Link to="/businesses" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.3s ease-in-out' }}>Businesses</p> </Link>}
+            {active!='c' && <Link to="/connect" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"20px", animation: 'navbarButtonFadeIn 1.7s ease-in-out' }}>Connect</p> </Link>}
         </div>
     );
 }

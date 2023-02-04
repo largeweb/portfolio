@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 const Connect = () => {
     return (
         <div className="connect">
-            <Navbar />
+            <Navbar active={'c'}/>
             <h1>Connect with me</h1>
             <div className="connect-links">
                 <Link to="/"><button>Back</button></Link>
