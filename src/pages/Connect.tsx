@@ -7,9 +7,9 @@ const Connect = () => {
         <div className="connect">
             <Navbar active={'c'}/>
             <h1>Connect with me</h1>
-            <div className="connect-links">
+            {/* <div className="connect-links">
                 <Link to="/"><button>Back</button></Link>
-            </div>
+            </div> */}
         </div>
     )
 }
