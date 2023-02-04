@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Link to="/businesses"><button>My Businesses</button></Link>
+      <Link to="/projects"><button>My Projects</button></Link>
+      <Link to="/connect"><button>Connect</button></Link>
     </div>
   )
 }
