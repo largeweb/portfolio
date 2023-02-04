@@ -1,5 +1,24 @@
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  nav {
+    margin-top: 20px;
+  }
+  .nav-button {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .project {
+    width: 90%;
+  }
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
