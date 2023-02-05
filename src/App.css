@@ -2,7 +2,7 @@
   #root {
     padding: 1rem;
   }
-  h1 {
+  .mobilecontainer div {
     font-size: 24px;
   }
   nav {
@@ -15,6 +15,39 @@
   .project {
     width: 90%;
   }
+  .mbg {
+    display:none;
+  }
+  .disappearwhenmobile {
+    display: none;
+  }
+  .mobilecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: fadeIn 2s ease-in-out;
+    transform: translateY(-50px);
+  }
+  .mobilediv {
+    background:lightgray;
+  }
+  .mobilebutton {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+    animation: pulse 1s ease-in-out;
+    height: 80px;
+    width:160px;
+  }
+}
+
+.mobilebutton {
+  background-color: #f2f2f2;
 }
 
 #root {
@@ -66,26 +99,30 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f2f2f2;
-  animation: fadeIn 2s ease-in-out;
+  /* background-color: #f2f2f2; */
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 h1 {
   font-size: 36px;
   margin-bottom: 40px;
-  animation: bounceInDown 1s ease-in-out;
+  animation: bounceInDown 0.5s ease-in-out;
+  color: gray;
+  background:lightgray;
+  border-radius: 10px;
+  padding: 15px 15px;
 }
 
 nav {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  animation: bounceInUp 1s ease-in-out;
+  animation: bounceInUp 0.5s ease-in-out;
 }
 
 .nav-button {
-  background-color: #333;
-  color: #fff;
+  /* background-color: lightgray; */
+  color: gray;
   padding: 10px 10px;
   border: none;
   border-radius: 10px;
@@ -184,6 +221,22 @@ transform: translate3d(0, 0, 0);
 }
 }
 
+/* new keyframe called wavebounce that slides in upwards for 1 second, reverses for another 0.5 seconds and then reverses again pack to origin, detailed comments for each line */
+@keyframes wavebounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes pulse {
 from {
 transform: scale(1);
@@ -197,14 +250,16 @@ transform: scale(1.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 0.7s ease-in-out;
+  /* animation: wavebounce 0.7s ease-in-out; */
 }
 
 .project {
   width: 80%;
   margin-bottom: 40px;
   text-align: center;
-  animation: slideInUp 1s ease-in-out;
+  animation: slideInUp 0.7s ease-in-out;
+  /* animation: wavebounce 0.7s ease-in-out; */
 }
 
 .project img {
@@ -240,14 +295,16 @@ transform: scale(1.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 0.7s ease-in-out;
+  /* animation: wavebounce 0.7s ease-in-out; */
 }
 
 .business {
   width: 80%;
   margin-bottom: 40px;
   text-align: center;
-  animation: slideInUp 1s ease-in-out;
+  animation: slideInUp 0.7s ease-in-out;
+  /* animation: wavebounce 0.7s ease-in-out; */
 }
 
 .business img {
@@ -295,3 +352,63 @@ transform: scale(1.05);
         transform: translateX(0);
     }
 }
+
+.mobilecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background-color: #f2f2f2; */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.mobilecontainer div {
+  display: flex;
+  background-color: #f2f2f2;
+  font-size: 24px;
+  color:gray;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 40px;
+  text-align: center;
+  animation: slideInUp 0.8s ease-in-out;
+  padding:10px 20px;
+  max-width: 500px;
+}
+
+/* id for div with faster animation that fades in */
+#fancydiv {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.mbg {
+  position: fixed;
+  background-size: 100% 100%;
+  background-position: center;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:95%;
+  width:1000px;
+  border-radius: 200px;
+}
+
+.d3d {
+  background-color: #f2f2f2;
+  color: gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  /* box shadow for display */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s ease-in-out;
+}
+/*
+body {
+  background:transparent;
+} */

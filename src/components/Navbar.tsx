@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({active}) => {
+const Navbar = (props: any) => {
 
     return (
         <div style={{
@@ -20,9 +20,9 @@ const Navbar = ({active}) => {
             marginBottom: '20px'
         }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 0.9s ease-in-out' }}>Home</p> </Link>
-            {active!='p' && <Link to="/projects" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.3s ease-in-out' }}>Projects</p> </Link>}
-            {active!='b' && <Link to="/businesses" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.7s ease-in-out' }}>Businesses</p> </Link>}
-            {active!='c' && <Link to="/connect" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"20px", animation: 'navbarButtonFadeIn 2.1s ease-in-out' }}>Connect</p> </Link>}
+            {props.active!='p' && <Link to="/projects" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.3s ease-in-out' }}>Projects</p> </Link>}
+            {props.active!='b' && <Link to="/businesses" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"10px", animation: 'navbarButtonFadeIn 1.7s ease-in-out' }}>Businesses</p> </Link>}
+            {props.active!='c' && <Link to="/connect" style={{ textDecoration: 'none', color: 'white' }}> <p style={{ fontSize: '1.2rem', color:"gray", padding:"20px", animation: 'navbarButtonFadeIn 2.1s ease-in-out' }}>Connect</p> </Link>}
         </div>
     );
 }
