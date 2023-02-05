@@ -10,7 +10,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <div style={{position:"fixed",top:"0",left:"0",bottom:"0",right:"0",backgroundColor:"#f1ffff",zIndex:"-2"}}></div>
+      <div style={{position:"fixed",top:"0",left:"0",bottom:"0",right:"0",backgroundColor:"lightgray",zIndex:"-2"}}></div>
       <img src={bg} className='mbg'  alt="bg" />
       <header className="App-header">
         <Helmet>
