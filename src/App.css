@@ -148,6 +148,14 @@ nav {
   animation: pulse 0.5s ease-in-out;
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -237,6 +245,35 @@ transform: translate3d(0, 0, 0);
   }
 }
 
+@keyframes colorFlow {
+  0% {
+    border: 3px solid rgb(168, 168, 168);
+    color:transparent;
+    color:lightgray;
+    opacity:0;
+  }
+  /* 20% {
+    border: 3px solid gray;
+  } */
+  50% {
+    opacity: 1;
+    /* border: 3px solid #ccc; */
+    box-shadow: 0 0 0 0.2em #ccc;
+    color:gray;
+  }
+  /* 70% {
+    border: 3px solid gray;
+  } */
+  100% {
+    /* border: 3px solid #ccc; */
+  }
+}
+
+/* @keyframes bigpulse {
+  0% {
+    transform: scale(0.8);
+  }
+} */
 @keyframes pulse {
 from {
 transform: scale(1);
@@ -412,3 +449,91 @@ transform: scale(1.05);
 body {
   background:transparent;
 } */
+
+.connectTextArea {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  transition: height 0.5s ease-in-out;
+}
+
+.connectTextArea:focus {
+  outline: none;
+  /* border: 1px solid #555; */
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  height: 180px;
+  /* 500ms transition */
+  transition: height 0.5s ease-in-out;
+}
+
+.connectSend {
+  background-color: transparent;
+  color: gray;
+  outline: none;
+  transition: 1s;
+  /* border: none; */
+  border: 3px solid rgb(179, 179, 179);
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  animation: colorFlow 1.2s ease-in-out;
+}
+
+.connectSendInvisible {
+  animation: fadeOut 1.0s ease-in-out;
+  background-color: transparent;
+  outline: none;
+  padding: 12px 20px;
+  margin: 4px 2px;
+  border: 3px solid transparent;
+  pointer-events: none;
+  color: transparent;
+  border-radius: 8px;
+  opacity:0;
+  /* border: 3px solid #ccc; */
+  /* transition: 1s; */
+  /* color: white; */
+  /* border: none; */
+  /* border: 3px solid #ccc; */
+  /* text-decoration: none; */
+  /* cursor: pointer; */
+  /* animation: step-end 0.8s ease-in-out;
+  transition:1s; */
+  /* animation to fadeout */
+}
+
+.connectSend:hover {
+  outline: none;
+  /* background-color: #ccc; */
+  /* color: lightgray; */
+  border: 3px solid #ccc;
+  /* font-size: 20px; */
+  transform: scale(1.1);
+  transition: 0.3s;
+  /* animation: bigpulse 2.0s ease-in-out; */
+  /* border: 3px solid transparent; */
+  /* color: transparent; */
+}
+
+/* when connect send is pressed the text becomes dark gray */
+.connectSend:active {
+  outline: none;
+  /* background-color: #ccc; */
+  color: darkgray;
+  border: 3px solid transparent;
+  /* font-size: 20px; */
+  /* transform: scale(1.1); */
+  transition: 0.1s;
+  /* animation: bigpulse 2.0s ease-in-out; */
+  /* border: 3px solid transparent; */
+  /* color: transparent; */
+}
