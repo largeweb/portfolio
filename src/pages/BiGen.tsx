@@ -41,13 +41,13 @@ const BiGen = () => {
             <div style={{color:"gray",fontSize:"20px",fontWeight:"700", textAlign:"left"}}>
                 <p>👉 Anonymously Include an Idea to Influence the Next Post for @bi_helper<br></br>👉 All Awaiting Ideas will be Aggregated For Each Run & Pass Through Safety Filter<br></br>👉 No More than 5 Ideas Will be Considered for Each Run</p>
             </div>
-            {ideas && <div>{ideas}</div>}
-            <button onClick={fetchCurrentIdeas} style={{marginBottom:"20px"}}>View Waiting Ideas</button>
+            {ideas && <div style={{color:"gray"}}>{ideas}</div>}
+            <button onClick={fetchCurrentIdeas} className='connectSend' style={{marginBottom:"20px"}}>View Waiting Ideas</button>
             {/* Text Area for value m */}
-            {m && <p>chars: {m.length}</p>}
+            {ivis && m && <button style={{outline:"none"}} className={m ? 'connectSend' : 'connectSendInvisible'} onClick={sendIdea}>Send</button>}
+            {m && <p style={{color:"gray",marginTop:"-10px"}}>chars: {m.length}</p>}
             {ivis && <textarea className='connectTextArea ' style={{background:"lightgray",color:"black",fontSize:"18px"}} placeholder='Your Idea (300 Chars Max)' minLength={1} maxLength={300} value={m} onChange={(e) => sm(e.target.value)}></textarea>}
             {!ivis && <div>Thank you for Sharing!</div>}
-            {ivis && <button style={{outline:"none"}} className={m ? 'connectSend' : 'connectSendInvisible'} onClick={sendIdea}>Send</button>}
             {/* <div className="connect-links">
                 <Link to="/"><button>Back</button></Link>
             </div> */}
