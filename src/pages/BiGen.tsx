@@ -37,9 +37,10 @@ const BiGen = () => {
     return (
         <div className="connect">
             <div style={{position:"fixed",top:"0",left:"0",bottom:"0",right:"0",backgroundColor:"lightgray",zIndex:"-2"}}></div>
-            <h1 style={{fontSize:"40px"}}>Influence Post</h1>
+            <h1 style={{fontSize:"40px",marginTop:"-150px",padding:"0px"}}>Influence Post</h1>
+            <h2 style={{fontSize:"20px",textAlign:"center",color:"gray"}}>Anonymously Include an Idea to Influence the Next Post for @bi_helper</h2>
             <div style={{color:"gray",fontSize:"20px",fontWeight:"700", textAlign:"left"}}>
-                <p>👉 Anonymously Include an Idea to Influence the Next Post for @bi_helper<br></br>👉 All Awaiting Ideas will be Aggregated For Each Run & Pass Through Safety Filter<br></br>👉 No More than 5 Ideas Will be Considered for Each Run</p>
+                <p>👉 These Ideas will be Aggregated Together (Not Randomly Picked)<br></br>👉 No More than 5 Ideas Will be Considered for Each Post<br></br>👉 NSFW Content will be Filtered Out</p>
             </div>
             {ideas && <div style={{color:"gray"}}>{ideas}</div>}
             <button onClick={fetchCurrentIdeas} className='connectSend' style={{marginBottom:"20px"}}>View Waiting Ideas</button>
@@ -47,7 +48,7 @@ const BiGen = () => {
             {ivis && m && <button style={{outline:"none"}} className={m ? 'connectSend' : 'connectSendInvisible'} onClick={sendIdea}>Send</button>}
             {m && <p style={{color:"gray",marginTop:"-10px"}}>chars: {m.length}</p>}
             {ivis && <textarea className='connectTextArea ' style={{background:"lightgray",color:"black",fontSize:"18px"}} placeholder='Your Idea (300 Chars Max)' minLength={1} maxLength={300} value={m} onChange={(e) => sm(e.target.value)}></textarea>}
-            {!ivis && <div>Thank you for Sharing!</div>}
+            {!ivis && <div style={{color:"gray"}}>Thank you for Sharing!</div>}
             {/* <div className="connect-links">
                 <Link to="/"><button>Back</button></Link>
             </div> */}
