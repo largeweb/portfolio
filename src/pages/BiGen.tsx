@@ -44,9 +44,9 @@ const BiGen = () => {
             {ideas && <div>{ideas}</div>}
             <button onClick={fetchCurrentIdeas} style={{marginBottom:"20px"}}>View Waiting Ideas</button>
             {/* Text Area for value m */}
+            {m && <p>chars: {m.length}</p>}
             {ivis && <textarea className='connectTextArea ' style={{background:"lightgray",color:"black",fontSize:"18px"}} placeholder='Your Idea (300 Chars Max)' minLength={1} maxLength={300} value={m} onChange={(e) => sm(e.target.value)}></textarea>}
             {!ivis && <div>Thank you for Sharing!</div>}
-            {m && <p>chars: {m.length}</p>}
             {ivis && <button style={{outline:"none"}} className={m ? 'connectSend' : 'connectSendInvisible'} onClick={sendIdea}>Send</button>}
             {/* <div className="connect-links">
                 <Link to="/"><button>Back</button></Link>
