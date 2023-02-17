@@ -9,7 +9,7 @@ const BiGen = () => {
 
     const sendIdea = async() => {
         // post to same link, but to /postiggenprompt with req.body.ig_gen_prompt = m
-        const response = await fetch('localhost:5000/postigprompt', {
+        const response = await fetch('http://170.187.159.180:5000/postigprompt', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const BiGen = () => {
 
     const fetchCurrentIdeas = async() => {
         // fetch from 170.187.159.180:5000/getigpromptnothing
-        const response = await fetch('localhost:5000/getigpromptnothing');
+        const response = await fetch('http://170.187.159.180:5000/getigpromptnothing');
         const data = await response.json();
         console.log(data);
         sideas(data.ig_gen_prompt);
