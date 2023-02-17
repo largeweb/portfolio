@@ -24,6 +24,7 @@ const BiGen = () => {
         }
         sm('');
         sivis(false);
+        fetchCurrentIdeas();
     }
 
     const fetchCurrentIdeas = async() => {
@@ -40,7 +41,7 @@ const BiGen = () => {
             <h1 style={{fontSize:"40px",marginTop:"-75px",padding:"0px"}}>Influence Post</h1>
             <h2 style={{fontSize:"20px",textAlign:"center",color:"gray"}}>Anonymously Include an Idea to Influence the Next Post for @bi_helper</h2>
             <div style={{color:"gray",fontSize:"20px",fontWeight:"700", textAlign:"left"}}>
-                <p>👉 These Ideas will be Aggregated Together (Not Randomly Picked)<br></br>👉 No More than 5 Ideas Will be Considered for Each Post<br></br>👉 NSFW Content will be Filtered Out</p>
+                <p>👉 These Ideas will be Combined Together<br></br>👉 Max of 5 Ideas Will be Used for Each Post<br></br>👉 NSFW Content will be Filtered Out</p>
             </div>
             {ideas && <div style={{color:"gray"}}>{ideas}</div>}
             <button onClick={fetchCurrentIdeas} className='connectSend' style={{marginBottom:"20px"}}>View Waiting Ideas</button>
